@@ -6,7 +6,6 @@ var playerAttack = 10;
 var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
-window.alert("Welcome to Robot Gladiators!");
 
 var fight = function(enemyName) {
     window.alert("Welcome to Robot Gladiators! Round " + ( i + 1 ) );
@@ -75,7 +74,9 @@ var fight = function(enemyName) {
             window.alert("You have lost your robot in battle! Game Over!");
             break;
           }
-    }
+          fight();
+
+      }
   };
  
   
