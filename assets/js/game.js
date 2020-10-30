@@ -30,16 +30,20 @@ promptFight = promptFight.toLowerCase();
   return false;
 }
 var fight = function(enemy) {
+  var isPlayerTurn = true;
+  if (Math.random() > 0.5) {
+    isPlayerTurn = false;
+  }
   
   
     
   while (playerInfo.health > 0 && enemy.health > 0) {
+    if (isPlayerTurn){
     // ask player if they'd like to fight or skip using fightOrSkip function
     if (fightOrSkip()) {
       // if true, leave fight by breaking loop
       break;
     }
-  var damage = randomNumber(playerInfo.attack - 3, playerInfo.attack);
 
     // remove enemy's health by subtracting the amount set in the playerInfo.attack variable
 // generate random damage value based on player's attack power
@@ -80,7 +84,9 @@ enemy.health = Math.max(0, enemy.health - damage);
       window.alert(playerInfo.name + ' still has ' + playerInfo.health + ' health left.');
     }
   }
+  isPlayerTurn = !isPlayerTurn;
 }
+};
 
  // function to start a new game
 
